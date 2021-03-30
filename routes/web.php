@@ -12,7 +12,10 @@
 */
 
 Route::get('/', 'PageController@welcome')->name('page.home');
+
 Route::get('contact', 'PageController@contact')->name('page.contact');
+Route::post('contact', 'PageController@simpanContact')->name('contact.save');
+
 Route::get('products', 'ProductController@index')->name('products.list');
 Route::get('about', 'PageController@about')->name('page.about');
 Route::get('/home', 'HomeController@index')->name('home');

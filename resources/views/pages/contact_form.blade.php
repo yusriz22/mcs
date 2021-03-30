@@ -64,8 +64,11 @@
   <div class="row">
     <div class="col-md-8 col-offset-2">
 
+      Halaman ini dibawa oleh: {{ $ref }}
+
       <div class="container">
         <form method="POST" action="">
+          @csrf
       
           <div class="form-group">
             <label for="name">Nama</label>

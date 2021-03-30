@@ -12,9 +12,16 @@ class PageController extends Controller
         return view('pages.welcome');
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-        return view('pages.contact_form');
+        $ref = $request->input('ref', 'none');
+        return view('pages.contact_form', compact('ref'));
+    }
+
+    public function simpanContact(Request $request)
+    {
+        //return $request->input('phone');
+        return $request->all();
     }
 
     public function about()
