@@ -33,11 +33,19 @@ Route::get('products', function() {
         ['id' => 3, 'name' => 'Produk C', 'harga' => 20.00]
     ];
 
-    return view('pages.template_products');
+    //return view('pages.template_products');
+    // return view('pages.template_products')
+    // ->with('page_title', $page_title);
+    // ->with('senarai_products', $senarai_products);
+
+    // return view('pages.template_products', [
+    //     'page_title' => $page_title,
+    //     'senarai_products' => $senarai_products
+    // ]);
+
+    return view('pages.template_products', compact('page_title', 'senarai_products'));
 
 });
-
-
 
 Auth::routes();
 
