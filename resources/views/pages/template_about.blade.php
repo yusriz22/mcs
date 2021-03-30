@@ -7,6 +7,11 @@
 <hr>
 {!! $textfield !!}
 
+
+<a href="{{ route('page.home') }}" class="btn btn-primary">
+    Kembali Ke Halaman Utama
+</a>
+
 {{-- Ini Comment --}}
 @endsection
 

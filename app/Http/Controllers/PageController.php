@@ -17,5 +17,13 @@ class PageController extends Controller
         return view('pages.contact_form');
     }
 
+    public function about()
+    {
+
+        $textfield = '<input type="text" name="test" value="test data">';
+        
+        return view('pages.template_about', compact('textfield'));
+    }
+
 
 }
