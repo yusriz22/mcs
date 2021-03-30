@@ -23,7 +23,7 @@ class PageController extends Controller
         $request->validate([
             //'name' => 'required'
             'name' => ['required', 'min:3'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email:filter'],
             'phone' => ['required', 'regex:/^(\+?6?01)[0|1|2|3|4|6|7|8|9]\-*[0-9]{7,8}$/']
         ]);
 
