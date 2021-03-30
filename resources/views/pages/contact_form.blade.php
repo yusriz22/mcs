@@ -66,6 +66,22 @@
 
       Halaman ini dibawa oleh: {{ $ref }}
 
+      @if (session('mesej-berjaya'))
+      <div class="alert alert-success">
+        {{ session('mesej-berjaya') }}  
+      </div>      
+      @endif
+
+      @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
       <div class="container">
         <form method="POST" action="">
           @csrf
@@ -77,7 +93,7 @@
       
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your email..">
+            <input type="text" id="email" name="email" placeholder="Your email..">
           </div>
 
           <div class="form-group">

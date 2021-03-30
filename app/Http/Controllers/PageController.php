@@ -20,8 +20,18 @@ class PageController extends Controller
 
     public function simpanContact(Request $request)
     {
+        $request->validate([
+            //'name' => 'required'
+            'name' => ['required', 'min:3'],
+            'email' => ['required', 'email'],
+            'phone' => ['required', 'regex:/^(\+?6?01)[0|1|2|3|4|6|7|8|9]\-*[0-9]{7,8}$/']
+        ]);
+
         //return $request->input('phone');
-        return $request->all();
+        $data = $request->all();
+
+        return redirect()->route('page.contact')
+        ->with('mesej-berjaya', 'Data Telah Berjaya Dihantar');
     }
 
     public function about()
