@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.welcome');
-});
-
-Route::get('contact', function() {
-    return view('pages.contact_form');
-});
+Route::get('/', 'PageController@welcome');
+Route::get('contact', 'PageController@contact');
 
 Route::get('contact/test', function() {
     return view('pages.contact_form');
+});
+
+Route::get('about', function () {
+
+    $textfield = '<input type="text" name="test" value="test data">';
+    
+    return view('pages.template_about', compact('textfield'));
 });
 
 Route::get('products', function() {

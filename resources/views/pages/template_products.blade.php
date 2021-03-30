@@ -75,20 +75,20 @@
 <!-- Starting Box Pricing -->
 <div class="container">
     <div class="row">
-    <?php
-    foreach ($senarai_products AS $product):
-    ?>
+    @foreach($senarai_products AS $product)
+    {{-- Ini Comment Dalam Blade --}}
+
         <div class="col-sm-4">
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
                         <h4 class="my-0 font-weight-normal">
-                            <?php echo $product['name']; ?>
+                            {{ $product['name'] }}
                         </h4>
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">
-                        RM <?php echo $product['harga']; ?>
+                        RM {{ $product['harga'] }}
                         </h1>
                         <button type="button" class="btn btn-lg btn-block btn-outline-primary">
                             Beli Sekarang!
@@ -98,9 +98,7 @@
             </div>
         </div>
     
-    <?php
-    endforeach;
-    ?>
+   @endforeach
     </div>
 </div>
   <!-- Tamat Pricing Box -->
