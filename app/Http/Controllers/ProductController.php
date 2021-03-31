@@ -84,7 +84,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Dapatkan rekod produk berdasarkan ID
+        $product = DB::table('products')->where('id', '=', $id)->first();
+        // Paparkan template borang edit produk
+        return view('products.template_borang_edit', compact('product'));
     }
 
     /**
@@ -96,7 +99,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate Data Daripada Borang
+        $request->validate([
+            'name' => ['required', 'min:5'],
+            'description' => ['required', 'min:5']
+        ]);
+        // Dapatkan data yang ingin disimpan ke dalam table products
+        $data = $request->only([
+            'name',
+            'description',
+            'price'
+        ]);
+
+        DB::table('products')->where('id', '=', $id)->update($data);
+        
+        // Selepas selesai update data, redirect user ke senarai products
+        return redirect()->route('products.edit', $id)
+        ->with('mesej-berjaya', 'Rekod telah berjaya dikemaskini');
+
+
     }
 
     /**

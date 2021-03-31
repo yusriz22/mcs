@@ -30,7 +30,7 @@
                           <td>{{ $product->name }}</td>
                           <td>{{ $product->price }}</td>
                           <td>
-                            <a href="" class="btn btn-sm btn-info">EDIT</a>
+                            <a href="{{ route('products.edit', [$product->id]) }}" class="btn btn-sm btn-info">EDIT</a>
                             <button type="submit" class="btn btn-sm btn-danger">DELETE</button>
                           </td>
                         </tr>
