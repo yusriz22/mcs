@@ -18,6 +18,8 @@ Route::post('products/add', 'ProductController@save')->name('products.save');
 Route::get('products/{id}/edit','ProductController@edit')->name('products.edit');
 // Route untuk dapatkan data edit produk
 Route::patch('products/{id}/edit','ProductController@update')->name('products.update');
+// Route untuk delete data produk
+Route::delete('products/{id}', 'ProductController@destroy')->name('products.delete');
 
 Route::get('languange/{locale}', function ($locale) {
     \App::setLocale($locale);

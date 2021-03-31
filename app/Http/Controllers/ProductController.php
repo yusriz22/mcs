@@ -128,6 +128,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('products')->where('id', '=', $id)->delete();
+
+        return redirect()->route('products.list')
+        ->with('mesej-berjaya', 'Rekod telah berjaya dipadam');
     }
 }
