@@ -13,7 +13,7 @@
 
                 <div class="card-body">
 
-                  <a href="{{ route('products.add') }}" class="btn btn-primary">Tambah Produk</a>
+                  <a href="{{ route('users.create') }}" class="btn btn-primary">Tambah User</a>
 
                   <hr>
 
@@ -23,32 +23,32 @@
                       <thead>
                         <th>ID</th>
                         <th>NAME</th>
-                        <th>PRICE</th>
+                        <th>EMAIL</th>
                         <th>ACTION</th>
                       </thead>
 
                       
                       <tbody>
 
-                          @foreach($senarai_products AS $product)
+                          @foreach($senarai_users AS $user)
                           <tr>
-                          <td>{{ $product->id }}</td>
-                          <td>{{ $product->name }}</td>
-                          <td>{{ number_format($product->price , 2,",",".") }}</td>
+                          <td>{{ $user->id }}</td>
+                          <td>{{ $user->name }}</td>
+                          <td>{{ $user->email }}</td>
                           <td>
-                            <a href="{{ route('products.edit', [$product->id]) }}" class="btn btn-sm btn-info">EDIT</a>
+                            <a href="{{ route('users.edit', [$user->id]) }}" class="btn btn-sm btn-info">EDIT</a>
 
-                              <form method="POST" action="{{ route('products.delete', [$product->id]) }}">
+                              <form method="POST" action="{{ route('users.destroy', [$user->id]) }}">
                                 @csrf
                                 @method('DELETE')
                                 
                                 <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-delete-{{ $product->id }}">
+<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}">
   DELETE
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="modal-delete-{{ $product->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-delete-{{ $user->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -58,7 +58,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Adakah anda bersetuju untuk menghapuskan data {{ $product->name }}?
+        Adakah anda bersetuju untuk menghapuskan data {{ $user->name }}?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,7 +78,7 @@
 
                     </table>
 
-                    {{ $senarai_products->links() }}
+                    {{ $senarai_users->links() }}
 
                 </div>
             </div>

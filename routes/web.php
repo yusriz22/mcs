@@ -21,6 +21,8 @@ Route::patch('products/{id}/edit','ProductController@update')->name('products.up
 // Route untuk delete data produk
 Route::delete('products/{id}', 'ProductController@destroy')->name('products.delete');
 
+Route::resource('users', 'UserController');
+
 Route::get('languange/{locale}', function ($locale) {
     \App::setLocale($locale);
     return redirect()->route('page.home');

@@ -115,7 +115,6 @@ class ProductController extends Controller
         return redirect()->route('products.edit', $id)
         ->with('mesej-berjaya', 'Rekod telah berjaya dikemaskini');
 
-
     }
 
     /**
