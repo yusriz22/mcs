@@ -15,4 +15,9 @@ Route::get('products/add', 'ProductController@add')->name('products.add');
 // Route untuk hantar maklumat produk yang ditambah pada borang
 Route::post('products/add', 'ProductController@save')->name('products.save');
 
+Route::get('languange/{locale}', function ($locale) {
+    \App::setLocale($locale);
+    return redirect()->route('page.home');
+})->name('tukar.bahasa');
+
 Auth::routes();

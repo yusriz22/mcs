@@ -36,6 +36,10 @@
                                 {{ __('Tambah Produk') }}
                             </a>
 
+                            <a class="dropdown-item" href="{{ route('tukar.bahasa', ['my']) }}">
+                                {{ __('Bahasa Melayu') }}
+                            </a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

@@ -6,6 +6,8 @@
     <div class="row">
         <div class="col-8 offset-2">
 
+            @include('layouts.alerts')
+
             <form method="POST" action="{{ route('products.save') }}">
                 @csrf
             <div class="card">

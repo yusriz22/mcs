@@ -51,6 +51,13 @@ class ProductController extends Controller
             'description',
             'price'
         ]);
+
+        // Jika nama field pada form lain dengan column di table database
+        // $data = [
+        //     'name' => $request->input('nama_produk'),
+        //     'price' => $request->input('harga'),
+        // ];
+
         // Simpan data ke table products
         DB::table('products')->insert($data);
 
