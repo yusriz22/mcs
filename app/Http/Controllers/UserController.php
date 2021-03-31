@@ -45,11 +45,13 @@ class UserController extends Controller
         ]);
 
         $data = $request->except('password');
+
         $data['password'] = bcrypt($request->password);
 
         User::create($data);
 
-        return redirect()->route('users.index')->with('mesej-berjaya', 'Rekod user berjaya ditambah');
+        return redirect()->route('users.index')
+        ->with('mesej-berjaya', 'Rekod user berjaya ditambah');
     }
 
     /**
@@ -98,7 +100,8 @@ class UserController extends Controller
 
         $user->update($data);
 
-        return redirect()->route('users.index')->with('mesej-berjaya', 'Rekod user berjaya ditambah');
+        return redirect()->route('users.index')
+        ->with('mesej-berjaya', 'Rekod user berjaya dikemaskini');
     }
 
     /**

@@ -8,7 +8,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    Senarai Produk
+                    Senarai Users
                 </div>
 
                 <div class="card-body">
