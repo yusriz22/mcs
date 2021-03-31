@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -16,7 +17,8 @@ class ProductController extends Controller
     {
         $page_title = 'Senarai Produk Popular';
 
-        $senarai_products = DB::table('products')->paginate(2);
+        //$senarai_products = DB::table('products')->paginate(2);
+        $senarai_products = Product::paginate(2);
 
         return view('products.template_products', compact('page_title', 'senarai_products'));
     }
@@ -46,11 +48,7 @@ class ProductController extends Controller
             'description' => ['required', 'min:5']
         ]);
         // Dapatkan data yang ingin disimpan ke dalam table products
-        $data = $request->only([
-            'name',
-            'description',
-            'price'
-        ]);
+        $data = $request->all();
 
         // Jika nama field pada form lain dengan column di table database
         // $data = [
@@ -59,7 +57,8 @@ class ProductController extends Controller
         // ];
 
         // Simpan data ke table products
-        DB::table('products')->insert($data);
+        // DB::table('products')->insert($data);
+        Product::create($data);
 
         // Selepas selesai simpan data, redirect user ke senarai products
         return redirect()->route('products.list');
@@ -85,7 +84,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         // Dapatkan rekod produk berdasarkan ID
-        $product = DB::table('products')->where('id', '=', $id)->first();
+        // $product = DB::table('products')->where('id', '=', $id)->first();
+        $product = Product::findOrFail($id);
         // Paparkan template borang edit produk
         return view('products.template_borang_edit', compact('product'));
     }
@@ -105,13 +105,11 @@ class ProductController extends Controller
             'description' => ['required', 'min:5']
         ]);
         // Dapatkan data yang ingin disimpan ke dalam table products
-        $data = $request->only([
-            'name',
-            'description',
-            'price'
-        ]);
+        $data = $request->all();
 
-        DB::table('products')->where('id', '=', $id)->update($data);
+        // DB::table('products')->where('id', '=', $id)->update($data);
+        $product = Product::find($id);
+        $product->update($data);
         
         // Selepas selesai update data, redirect user ke senarai products
         return redirect()->route('products.edit', $id)
@@ -128,7 +126,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('products')->where('id', '=', $id)->delete();
+        //DB::table('products')->where('id', '=', $id)->delete();
+        $product = Product::findOrFail($id);
+        $product->delete();
 
         return redirect()->route('products.list')
         ->with('mesej-berjaya', 'Rekod telah berjaya dipadam');
