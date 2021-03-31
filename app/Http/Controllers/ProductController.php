@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
@@ -15,23 +16,9 @@ class ProductController extends Controller
     {
         $page_title = 'Senarai Produk Popular';
 
-        $senarai_products = [
-            ['id' => 1, 'name' => 'Produk A', 'harga' => 10.00],
-            ['id' => 2, 'name' => 'Produk B', 'harga' => 15.00],
-            ['id' => 3, 'name' => 'Produk C', 'harga' => 20.00]
-        ];
+        $senarai_products = DB::table('products')->paginate(2);
 
-        //return view('pages.template_products');
-        // return view('pages.template_products')
-        // ->with('page_title', $page_title);
-        // ->with('senarai_products', $senarai_products);
-
-        // return view('pages.template_products', [
-        //     'page_title' => $page_title,
-        //     'senarai_products' => $senarai_products
-        // ]);
-
-        return view('pages.template_products', compact('page_title', 'senarai_products'));
+        return view('products.template_products', compact('page_title', 'senarai_products'));
     }
 
     /**
@@ -39,9 +26,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        return view('products.template_borang_add');
     }
 
     /**
@@ -50,9 +37,25 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function save(Request $request)
     {
-        //
+
+        // Validate Data Daripada Borang
+        $request->validate([
+            'name' => ['required', 'min:5'],
+            'description' => ['required', 'min:5']
+        ]);
+        // Dapatkan data yang ingin disimpan ke dalam table products
+        $data = $request->only([
+            'name',
+            'description',
+            'price'
+        ]);
+        // Simpan data ke table products
+        DB::table('products')->insert($data);
+
+        // Selepas selesai simpan data, redirect user ke senarai products
+        return redirect()->route('products.list');
     }
 
     /**
