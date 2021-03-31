@@ -19,17 +19,17 @@
 
                     <div class="form-group">
                         <label>Nama User</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="name" class="form-control" value="{{ old('name') }}">
                     </div>
 
                     <div class="form-group">
                         <label>Email User</label>
-                        <input type="text" name="email" class="form-control">
+                        <input type="text" name="email" class="form-control" value="{{ old('email') }}">
                     </div>
 
                     <div class="form-group">
                         <label>MyKAD User</label>
-                        <input type="text" name="mykad" class="form-control">
+                        <input type="text" name="mykad" class="form-control" value="{{ old('mykad') }}">
                     </div>
 
                     <div class="form-group">
