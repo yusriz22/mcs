@@ -14,6 +14,8 @@ Route::get('products', 'ProductController@index')->name('products.list');
 Route::get('products/datatables', 'ProductController@datatables')->name('products.datatables');
 //Route untuk export products
 Route::get('products/export', 'ProductExportController@export')->name('products.export');
+//Route untuk import products
+Route::post('products/import', 'ProductImportController@import')->name('products.import');
 // Route untuk paparkan borang tambah produk
 Route::get('products/add', 'ProductController@add')->name('products.add');
 // Route untuk hantar maklumat produk yang ditambah pada borang
