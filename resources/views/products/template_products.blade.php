@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('css_vendor')
-<link href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 @endsection
 
 @push('script_vendor')
@@ -41,12 +43,13 @@
                 <div class="card-body">
 
                   <a href="{{ route('products.add') }}" class="btn btn-primary">Tambah Produk</a>
+                  <a href="{{ route('products.export') }}" class="btn btn-success">Export Produk</a>
 
                   <hr>
 
                   @include('layouts.alerts')
 
-                    <table class="table table-bordered" id="products-table">
+                    <table class="table table-bordered table-sm" id="products-table">
                       <thead>
                         <th>ID</th>
                         <th>NAME</th>

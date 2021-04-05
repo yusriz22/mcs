@@ -12,6 +12,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('products', 'ProductController@index')->name('products.list');
 // Route untuk panggil data ke datatables menggunakan ajax
 Route::get('products/datatables', 'ProductController@datatables')->name('products.datatables');
+//Route untuk export products
+Route::get('products/export', 'ProductExportController@export')->name('products.export');
 // Route untuk paparkan borang tambah produk
 Route::get('products/add', 'ProductController@add')->name('products.add');
 // Route untuk hantar maklumat produk yang ditambah pada borang
