@@ -122,7 +122,7 @@ class ProductController extends Controller
         // DB::table('products')->where('id', '=', $id)->update($data);
         $product = Product::find($id);
         $product->update($data);
-        
+
         // Selepas selesai update data, redirect user ke senarai products
         return redirect()->route('products.edit', $id)
         ->with('mesej-berjaya', 'Rekod telah berjaya dikemaskini');
