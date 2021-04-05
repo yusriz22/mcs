@@ -13,12 +13,14 @@
           processing: true,
           serverSide: true,
           ajax: '{!! route('products.datatables') !!}',
+          searchDelay: 500,
           columns: [
               { data: 'id', name: 'id' },
               { data: 'name', name: 'name' },
               { data: 'price', name: 'price' },
-              { data: 'actions', name: 'actions', orderable: false, searchable: false }
-          ]
+              { data: 'actions', name: 'actions', orderable: false, searchable: false },
+          ],
+          "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
       });
   });
   </script>
