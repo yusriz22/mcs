@@ -8,9 +8,8 @@
 
             @include('layouts.alerts')
 
-            <form method="POST" action="{{ route('products.update', [$product->id]) }}">
-                @csrf
-                @method('PATCH')
+            {!! Form::model($product, ['route' => ['products.update', $product->id]]) !!}
+            @method('PATCH')
             <div class="card">
                 <div class="card-header">
                     Edit Maklumat Produk
@@ -20,24 +19,24 @@
 
                     <div class="form-group">
                         <label>Nama Produk</label>
-                        <input type="text" name="name" class="form-control" value="{{ $product->name }}">
+                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
                     </div>
 
                     <div class="form-group">
                         <label>Penerangan Produk</label>
-                        <textarea name="description" class="form-control">{{ $product->description }}</textarea>
+                        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
                     </div>
 
                     <div class="form-group">
                         <label>Harga Produk</label>
-                        <input type="number" name="price" class="form-control" min="0.01" step="0.01" value="{{ $product->price }}">
+                        {!! Form::number('price', null, ['class' => 'form-control', 'min' => '0.01', 'step' => '0.01']) !!}
                     </div>
 
                     <a href="{{ route('products.list') }}" class="btn btn-success">BACK</a>
                     <button type="submit" class="btn btn-primary">SAVE</button>
                 </div>
             </div>
-            </form>
+            {!! Form::close() !!}
 
         </div>
     </div>

@@ -8,8 +8,7 @@
 
             @include('layouts.alerts')
 
-            <form method="POST" action="{{ route('products.save') }}">
-                @csrf
+            {!! Form::open(['route' => 'products.save']) !!}
             <div class="card">
                 <div class="card-header">
                     Tambah Maklumat Produk
@@ -19,7 +18,7 @@
 
                     <div class="form-group">
                         <label>Nama Produk</label>
-                        <input type="text" name="name" class="form-control">
+                        {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'nama_produk']) !!}
                     </div>
 
                     <div class="form-group">
@@ -35,7 +34,7 @@
                     <button type="submit" class="btn btn-primary btn-block">Save</button>
                 </div>
             </div>
-            </form>
+            {!! Form::close() !!}
 
         </div>
     </div>

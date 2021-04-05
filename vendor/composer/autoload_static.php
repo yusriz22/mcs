@@ -29,6 +29,7 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -145,6 +146,7 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'C' => 
         array (
             'Cron\\' => 5,
+            'Collective\\Html\\' => 16,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -412,6 +414,10 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -461,6 +467,7 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -469,6 +476,7 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Product' => __DIR__ . '/../..' . '/app/Product.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -589,6 +597,13 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -939,8 +954,25 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'Faker\\Calculator\\Isbn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Isbn.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Luhn.php',
         'Faker\\Calculator\\TCNo' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/TCNo.php',
+        'Faker\\Core\\Barcode' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Barcode.php',
+        'Faker\\Core\\Blood' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Blood.php',
+        'Faker\\Core\\File' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/File.php',
+        'Faker\\Core\\Number' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Number.php',
         'Faker\\DefaultGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/DefaultGenerator.php',
         'Faker\\Documentor' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Documentor.php',
+        'Faker\\Extension\\BarcodeExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/BarcodeExtension.php',
+        'Faker\\Extension\\BloodExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/BloodExtension.php',
+        'Faker\\Extension\\Container' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/Container.php',
+        'Faker\\Extension\\ContainerBuilder' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/ContainerBuilder.php',
+        'Faker\\Extension\\ContainerException' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/ContainerException.php',
+        'Faker\\Extension\\Extension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/Extension.php',
+        'Faker\\Extension\\ExtensionNotFound' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/ExtensionNotFound.php',
+        'Faker\\Extension\\FileExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/FileExtension.php',
+        'Faker\\Extension\\GeneratorAwareExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/GeneratorAwareExtension.php',
+        'Faker\\Extension\\GeneratorAwareExtensionTrait' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/GeneratorAwareExtensionTrait.php',
+        'Faker\\Extension\\Helper' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/Helper.php',
+        'Faker\\Extension\\NotInContainerException' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/NotInContainerException.php',
+        'Faker\\Extension\\NumberExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/NumberExtension.php',
         'Faker\\Factory' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Factory.php',
         'Faker\\Generator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Generator.php',
         'Faker\\Guesser\\Name' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Guesser/Name.php',
@@ -1057,6 +1089,7 @@ class ComposerStaticInit8cb79a9b22eabd8ad92b80dbc1051858
         'Faker\\Provider\\en_CA\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_CA/Address.php',
         'Faker\\Provider\\en_CA\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_CA/PhoneNumber.php',
         'Faker\\Provider\\en_GB\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_GB/Address.php',
+        'Faker\\Provider\\en_GB\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_GB/Company.php',
         'Faker\\Provider\\en_GB\\Internet' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_GB/Internet.php',
         'Faker\\Provider\\en_GB\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_GB/Payment.php',
         'Faker\\Provider\\en_GB\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/en_GB/Person.php',
