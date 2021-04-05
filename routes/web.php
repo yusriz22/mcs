@@ -10,6 +10,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route untuk paparkan template senarai produk
 Route::get('products', 'ProductController@index')->name('products.list');
+// Route untuk panggil data ke datatables menggunakan ajax
+Route::get('products/datatables', 'ProductController@datatables')->name('products.datatables');
 // Route untuk paparkan borang tambah produk
 Route::get('products/add', 'ProductController@add')->name('products.add');
 // Route untuk hantar maklumat produk yang ditambah pada borang

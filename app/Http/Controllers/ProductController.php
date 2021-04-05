@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Product;
+use DataTables;
 
 class ProductController extends Controller
 {
@@ -18,9 +19,20 @@ class ProductController extends Controller
         $page_title = 'Senarai Produk Popular';
 
         //$senarai_products = DB::table('products')->paginate(2);
-        $senarai_products = Product::paginate(2);
+        // $senarai_products = Product::paginate(2);
 
-        return view('products.template_products', compact('page_title', 'senarai_products'));
+        return view('products.template_products', compact('page_title'));
+    }
+
+    public function datatables()
+    {
+        $query = Product::query();
+
+        return DataTables::of($query)
+        ->addColumn('actions', function ($product) {
+            return view('products.actions', compact('product'));
+        })
+        ->make(true);
     }
 
     /**
